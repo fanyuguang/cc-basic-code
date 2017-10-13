@@ -2,16 +2,16 @@
 
 using namespace std;
 
-class Student {
+class Employee{
 public:
-  Student(int id_val, int score_val) {
+  Employee(int id_val, int score_val) {
     id = id_val;
     score = score_val;
   }
 
-  Student operator+(Student& s2) {
-    Student s3(id, score + s2.score);
-    return s3;
+  Employee operator+(Employee& e2) {
+    Employee e3(id, score + e2.score);
+    return e3;
   }
 
   int get_id() {
@@ -22,26 +22,26 @@ public:
     return score;
   }
 
-  friend bool operator<(const Student& s1, const Student& s2);
+  friend bool operator<(const Employee& e1, const Employee& e2);
 
 private:
   int id;
   int score;
 };
 
-bool operator<(const Student& s1, const Student& s2) {
-  return s1.score < s2.score;
+bool operator<(const Employee& e1, const Employee& e2) {
+  return e1.score < e2.score;
 }
 
 int main() {
-  Student s1(1, 90);
-  Student s2(2, 91);
-  if (s1 < s2) {
+  Employee e1(1, 90);
+  Employee e2(2, 91);
+  if (e1 < e2) {
     cout << "true" << endl;
   } else {
     cout << "false" << endl;
   }
-  Student s3 = s1 + s2;
-  cout << s3.get_score() << endl;
+  Employee e3 = e1 + e2;
+  cout << e3.get_score() << endl;
   return 0;
 }
