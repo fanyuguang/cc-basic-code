@@ -30,13 +30,14 @@ vector<string> executeTask(vector<string> tasks, int execute_time, int cooldown)
     }
     execute_order_task.push_back(task);
     index_store[task] = current_index;
+    current_index++;
   }
   return execute_order_task;
 }
   
 
 int main() {
-  vector<string> tasks = {"A", "B", "B", "A"};
+  vector<string> tasks = {"A", "B", "C", "A", "D"};
   vector<string> result = executeTask(tasks, 1, 3);
   for (string task : result) {
     cout << task << endl;
