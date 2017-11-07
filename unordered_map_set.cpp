@@ -9,14 +9,14 @@ int main() {
   unordered_map<int, string> hash_map;
   hash_map.insert(make_pair(1, "a"));
   hash_map[2] = "b";
-  for(pair<int, string> iter : hash_map) {
+  for (pair<int, string> iter : hash_map) {
     cout << "first : " << iter.first << " second : " << iter.second << endl;
   }
 
   unordered_set<int> hash_set;
   hash_set.insert(1);
   hash_set.insert(2);
-  for(int num : hash_set) {
+  for (int num : hash_set) {
     cout << num << endl;
   }
 
